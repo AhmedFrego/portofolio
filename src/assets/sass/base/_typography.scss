@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 200;
+  src: local(""), url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-200.woff2") format("woff2"),
+    url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-200.woff") format("woff");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 300;
+  src: local(""), url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-300.woff2") format("woff2"),
+    url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-300.woff") format("woff");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""), url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-regular.woff2") format("woff2"),
+    url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-regular.woff") format("woff");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 500;
+  src: local(""), url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-500.woff2") format("woff2"),
+    url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-500.woff") format("woff");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 600;
+  src: local(""), url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-600.woff2") format("woff2"),
+    url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-600.woff") format("woff");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 700;
+  src: local(""), url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-700.woff2") format("woff2"),
+    url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-700.woff") format("woff");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 800;
+  src: local(""), url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-800.woff2") format("woff2"),
+    url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-800.woff") format("woff");
+}
+@font-face {
+  font-family: "Cairo";
+  font-style: normal;
+  font-weight: 900;
+  src: local(""), url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-900.woff2") format("woff2"),
+    url("../../CairoFont/cairo-v20-latin-ext_latin_arabic-900.woff") format("woff");
+}
+html {
+  font-size: 62.5%;
+  line-height: 1.7;
+  font-weight: 300;
+
+  font-family: "Cairo", serif;
+
+  @media (max-width: $bP-biger) {
+    font-size: 56.25%;
+  }
+
+  @media (max-width: $bP-big) {
+    font-size: 56.25%;
+  }
+}
+
+.paragraph {
+  width: min(95%, 60ch);
+  color: var(--color-secondary-5);
+
+  &--small {
+    font-size: $font-size-small;
+  }
+
+  &--default {
+    font-size: $font-size-default;
+  }
+
+  &--large-1 {
+    font-size: $font-size-large-1;
+  }
+
+  &--large-2 {
+    font-size: $font-size-large-2;
+  }
+
+  &--bold {
+    font-weight: 600;
+  }
+
+  &--capitalize {
+    text-transform: capitalize;
+  }
+  &--article {
+    text-transform: capitalize;
+    color: var(--color-secondary-6);
+    text-align: left;
+    width: 100%;
+    margin: 2rem;
+  }
+}
+
+// .heading {
+//   color: $color-2;
+//   font-size: $font-size-large-2 + 0.3rem;
+//   text-transform: capitalize;
+//   font-weight: 600;
+
+//   position: relative;
+
+
+// }
+
+.text {
+  &--big {
+    font-size: 5rem;
+  }
+
+  &--bold {
+    font-weight: 700;
+  }
+
+  &--capitalize {
+    text-transform: capitalize;
+  }
+
+  &--colored {
+    color: var(--color-main-4);
+  }
+}
+
+.heading-secondary {
+  text-align: center;
+  font-size: $font-size-large-3;
+  text-transform: capitalize;
+  color: $color-secondary;
+  position: relative;
+  width: min-content;
+  margin: auto;
+  line-height: 1.9;
+
+  transition: all 0.5s;
+  z-index: 5;
+
+  &--active {
+    transform: scale(1.5);
+
+    &::after {
+      transform: scale(0.75);
+    }
+  }
+
+  &::after {
+    content: "";
+    height: 0.5rem;
+    width: 90%;
+    position: absolute;
+    bottom: 1rem;
+    left: 5%;
+    background-color: $color-3-hex;
+    transition: all 0.5s;
+  }
+}

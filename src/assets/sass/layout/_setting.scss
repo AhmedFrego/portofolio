@@ -1,0 +1,226 @@
+.setting {
+  $text-color: $color-theme-inv-grey;
+
+  // GEARS SVG STYLES
+  &__svg {
+    width: 10rem;
+    height: 100%;
+    display: flex;
+    padding-top: 1rem;
+
+
+
+    &-icon {
+      width: 3.5rem;
+      line-height: 1.2;
+
+      &--gear {
+        color: $color-secondary;
+        align-self: flex-end;
+        &.spin svg {
+          animation: roundreverse 1s infinite forwards linear;
+        }
+      }
+
+      &--gear-solid {
+        margin-right: -1.5rem;
+        align-self: flex-start;
+        color: $color-main;
+        &.spin svg {
+          animation: round 1s infinite forwards linear;
+        }
+      }
+    }
+  }
+
+  // SIDE PAR STYLES
+  &-aside {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 35rem;
+    min-width: 250px;
+    max-height: calc(100vh - $headerHeight);
+
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    transform: translatex(100%);
+    transition: 2s ease-in-out;
+
+    &.open {
+      transform: none;
+    }
+
+    // PUPLIC STYLES
+    & li {
+      cursor: pointer;
+    }
+
+    & > * {
+      $padding-vertical: 0.5rem;
+      background: $color-theme-grey;
+      padding: $padding-vertical 2rem;
+
+      &:not(:last-child) {
+        $border-thickness: 2px;
+        border-bottom: $border-thickness solid $color-shadow-2;
+        padding-bottom: calc($padding-vertical + $border-thickness);
+      }
+    }
+
+    &__title {
+      color: $text-color;
+      text-align: center;
+
+      &--colors {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+      }
+
+      &--fonts {
+        width: 100%;
+      }
+    }
+    // THEMES STYLES
+    &__themes {
+      display: flex;
+      align-items: center;
+      height: 5rem;
+      position: relative;
+      overflow: hidden;
+
+      &__svg {
+        width: 4rem;
+        height: 100%;
+
+        position: absolute;
+        right: calc(50% - 2rem);
+
+        transition: 0.5s;
+        &--dark {
+          transform: translateY(100%);
+        }
+
+        &--light {
+          transform: translateY(-100%);
+        }
+
+        &.active {
+          transform: none;
+        }
+      }
+    }
+
+    // COLORS STYLES
+
+    &__colors {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+
+      position: relative;
+
+      &__hint {
+        font-size: $font-size-default;
+        color: $color-secondary;
+        width: 100%;
+        text-align: center;
+
+        &-mark {
+          background-color: $color-shadow-light-6;
+          padding: 0.3rem 1rem;
+          border-radius: $border-radius-large;
+          font-size: $font-size-large-2;
+          line-height: 1;
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          cursor: pointer;
+          color: $color-shadow-8;
+        }
+      }
+
+      &__color {
+        $dimenstions: 3rem;
+        width: $dimenstions;
+        height: $dimenstions;
+        border-radius: 50%;
+        border: 3px solid;
+        display: inline-block;
+      }
+      // color picker styles
+      &__add {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 100%;
+
+        &__input {
+          height: 2.5rem;
+          background: none;
+          width: 7rem;
+          &-label {
+            font-size: $font-size-large-1;
+            color: $text-color;
+          }
+        }
+        &__svg {
+          line-height: 1;
+          color: $color-main;
+          animation: round2 1s;
+          width: 3rem;
+
+          &--confirm,
+          &--cancel {
+            color: $text-color;
+          }
+
+          &.secondary {
+            color: $color-secondary;
+            animation: round 1s;
+          }
+        }
+        &--pick {
+          width: 15rem;
+        }
+      }
+    }
+    //  FONT STYLES
+    &__fonts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-evenly;
+
+      &__font {
+        color: $color-shadow-light-6;
+        padding: 0 1rem;
+        &.active {
+          color: $color-main;
+        }
+      }
+
+      &__size-changer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        // position: relative;
+
+        &__input {
+          width: 100px;
+          right: 2rem;
+          position: absolute;
+          transform: translateY(-50%);
+        }
+      }
+    }
+
+    //
+  }
+}

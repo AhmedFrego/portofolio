@@ -1,0 +1,70 @@
+.header {
+  height: $headerHeight;
+  padding: 0 $headerHeight;
+
+  display: flex;
+  justify-content: space-between;
+
+  font-weight: 700;
+  font-size: $font-size-large-2;
+  text-transform: capitalize;
+
+  color: $color-main;
+  background: $color-white;
+  box-shadow: 0 0 2rem 1rem $color-shadow-light-2;
+  // border-bottom: 2px solid rgba($color-1-rgba, .2);
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100vw;
+
+  &__nav-links {
+    height: 100%;
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__nav-link {
+    min-width: 10rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transform: translateX(-100rem) rotate(-30deg);
+    animation: fromLeft 1s ease forwards;
+
+    &::after,
+    &::before {
+      content: "";
+      height: 0.5rem;
+      position: absolute;
+      bottom: 1.5rem;
+      width: 0%;
+      transition: all 0.5s;
+    }
+
+    &::before {
+      background-color: $color-shadow-light-1;
+      width: 100%;
+    }
+
+    &:hover::after {
+      width: 100%;
+      background-color: $color-secondary;
+    }
+    &:hover::after,
+    &--active::before {
+      background-color: $color-secondary;
+    }
+  }
+
+  & .logo {
+    transform: translateX(100rem) rotate(30deg);
+    animation: fromRight 1s ease forwards;
+    height: 80%;
+    align-self: center;
+  }
+}

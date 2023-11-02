@@ -1,0 +1,40 @@
+.svg-button {
+  background: $color-main;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-radius: 50rem;
+
+  color: white;
+  font-size: $font-size-large-1;
+
+  cursor: pointer;
+
+  span {
+    height: 100%;
+    font-size: $font-size-large-1;
+    text-transform: capitalize;
+    white-space: nowrap;
+    transition: all 1s;
+  }
+
+  svg {
+    width: 2rem;
+  }
+
+  &.static {
+    &:hover {
+      background: $color-2-hex;
+    }
+  }
+  &:hover,
+  &.static {
+    gap: 1rem;
+
+    span {
+      transform: none;
+      width: initial;
+    }
+  }
+}

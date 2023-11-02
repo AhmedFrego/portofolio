@@ -1,0 +1,84 @@
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  transition: all 0.2s;
+}
+
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+a,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+svg {
+  max-height: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+path,
+circle,
+polygon {
+  transition: all 0.5s;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border-radius: 1rem;
+  border: 2px solid white;
+  width: 10rem;
+}
+
+button {
+  background-color: transparent;
+  // border: none;
+}
+
+textarea {
+  resize: none;
+  font-weight: 600;
+  color: var(--color-secondary-7);
+  border: none;
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 1rem;
+
+  &-track {
+    background: $color-main;
+  }
+  &-thumb {
+    background: $color-shadow-8;
+    transition: all 1s;
+    &:hover {
+      background: $color-shadow-6;
+    }
+  }
+}

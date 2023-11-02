@@ -1,0 +1,65 @@
+.keyboard {
+  padding: 1.5rem;
+  position: absolute;
+
+  border-radius: $border-radius-larger;
+  display: grid;
+  grid-template-columns: repeat(30,1fr);
+  grid-template-rows: repeat(5,1fr);
+  grid-gap: 5px;
+  transform-style: preserve-3d;
+  perspective: 300rem;
+  
+  &__key {
+    background-color: $color-theme-grey;
+    color:  $color-theme-inv-grey;
+
+    border-radius: $border-radius-default;
+    grid-column: span 2;
+
+    font-size: $font-size-default;
+    line-height: 1;
+  perspective: 300rem;
+
+  transform-style: preserve-3d;
+
+    transform: translateZ(6px);
+    box-shadow: .2rem .2rem .5rem $color-theme-inv ,0 0 .3rem $color-theme inset;
+
+
+    &:hover{
+      transform: none;
+    }
+    
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &--capslock,
+    &--return,
+    &--delete {
+      grid-column: span 4;
+    }
+
+    &--tab,
+    &--backslash,
+    &--leftctrl,&--command {
+      grid-column: span 3;
+    }
+
+    &--leftshift,
+    &--rightshift {
+      grid-column: span 5;
+    }
+
+    &--space {
+      grid-column: span 13;
+    }
+  }
+}
+
+// .key:active {
+//   box-shadow: inset 0 2px 3px grey;
+//   cursor: pointer;
+// }

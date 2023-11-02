@@ -1,0 +1,39 @@
+.service {
+  flex: 1 0 35rem;
+  padding: 1rem 3rem;
+  background: $color-1-hex;
+  border-radius: $border-radius-largest;
+  box-shadow: 0 0 .5rem .5rem $color-shadow-light-1;
+
+  transition: all 0.3s;
+
+  &:hover {
+    transform-origin: bottom right;
+    transform: translateZ(1cm);
+    box-shadow: .5rem .5rem .5rem .25rem $color-shadow-light-2;
+  }
+
+  &__title {
+    color: $color-2-hex;
+    font-size: $font-size-large-2 + 0.3rem;
+    text-transform: capitalize;
+    font-weight: 600;
+
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: -1.5rem;
+      width: calc(100% + 3rem);
+      height: 0.2rem;
+      background-color: $color-shadow-1;
+    }
+  }
+
+  &__description {
+    font-weight: 500;
+    color: $color-2-hex;
+  }
+}

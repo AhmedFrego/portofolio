@@ -1,0 +1,82 @@
+.phone {
+  $phoneThickness: 22px;
+
+  width: min-content;
+
+  transition: 1s;
+  perspective: 60rem;
+  transform-style: preserve-3d;
+
+
+  &:hover {
+    transform: rotate3d(0.1, 1, 0.1, 360deg);
+  }
+
+  &__face {
+    transform-style: preserve-3d;
+
+    &--back {
+      transform: translateZ(-$phoneThickness);
+      position: absolute;
+    }
+
+    &--front {
+      transform: scale(0.97);
+    }
+
+    &__cover {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      border-radius: 40px;
+      background: linear-gradient(#d4e9ff, #a8c1d8);
+
+      &--back {
+        transform: translateZ(1px);
+      }
+
+      &--front {
+        transform: translateZ(-1px);
+      }
+    }
+    &__square {
+      width: $phoneThickness - 2px;
+      height: 100%;
+      background: linear-gradient(#d4e9ff, #a8c1d8);
+      position: absolute;
+      top: 0;
+      transform: rotateY(-90deg) scaleY(96%);
+
+      &--back {
+        transform-origin: left center;
+        left: 20%;
+      }
+
+      &--front {
+        transform-origin: right center;
+        right: 20%;
+      }
+    }
+
+    &__img {
+      max-height: 50rem;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    left: 0;
+    top: 5px;
+    width: 98%;
+    height: 98%;
+    z-index: -1;
+    border-radius: 30px;
+    overflow: hidden;
+
+    & > * {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

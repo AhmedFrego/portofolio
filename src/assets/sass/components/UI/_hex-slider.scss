@@ -1,0 +1,49 @@
+.hex-slider {
+  $width: var(--width);
+  display: flex;
+  position: relative;
+  transform-style: preserve-3d;
+  // perspective: 10000rem;
+  width: 100%;
+
+  &__slide {
+    width: $width;
+    position: absolute;
+    left: 50%;
+    overflow: hidden;
+    transition: all 0s;
+
+
+    &--1,
+    &--2,
+    &--3,
+    &--4,
+    &--5,
+    &--6 {
+      visibility: visible;
+    }
+    &--1 {
+      transform-origin: right;
+      transform: translateZ(calc($width * 0.866025403)) translateX(-150%) rotateY(-60deg);
+      opacity: 1;
+    }
+    &--2 {
+      transform: translateX(-50%) translateZ(calc($width * 0.866025403));
+    }
+    &--3 {
+      transform-origin: left;
+      transform: translateZ(calc($width * 0.866025403)) translateX(50%) rotateY(60deg);
+    }
+    &--4 {
+      transform-origin: left;
+      transform: translateX(100%) rotateY(120deg);
+    }
+    &--5 {
+      transform: translateX(-50%) translateZ(calc($width * -0.866025403)) rotateY(180deg);
+    }
+    &--6 {
+      transform-origin: left;
+      transform: translateZ(calc($width * -0.866025403)) translateX(-50%) rotateY(240deg);
+    }
+  }
+}

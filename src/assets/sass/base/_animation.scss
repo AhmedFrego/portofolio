@@ -1,0 +1,208 @@
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: translateX(1.5rem) rotate(-70deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  30%,
+  100% {
+    text-shadow: 0 0 0rem $color-main;
+  }
+  20% {
+    text-shadow: 0 0 1rem $color-shadow-light-8;
+  }
+  5%,
+  7%,
+  9%,
+  11%,
+  13%,
+  15%,
+  17%,
+  19%,
+  21%,
+  23%,
+  25% {
+    transform: translateX(1px);
+  }
+  6%,
+  8%,
+  10%,
+  12%,
+  14%,
+  16%,
+  18%,
+  20%,
+  22%,
+  24%,
+  26% {
+    transform: translateX(-1px);
+  }
+}
+
+@keyframes hexToLeft {
+  from {
+    transform: rotateY(0deg);
+  }
+
+}
+@keyframes hexToRight {
+  from {
+    transform: rotateY(-120deg);
+  }
+}
+
+
+
+
+@keyframes fromLeft {
+  80% {
+    transform: translateX(5rem) rotate(10deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0);
+  }
+}
+
+@keyframes fromRight {
+  80% {
+    transform: translateX(-5rem) rotate(-10deg);
+  }
+  100% {
+    transform: none;
+  }
+}
+
+
+
+
+
+@keyframes enterLeft {
+  0% {
+    opacity: 1;
+    transform: translateX(50rem);
+  }
+  65% {
+    transform: translateX(-2rem);
+  }
+  85% {
+    transform: translateX(2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+@keyframes textEnterance1 {
+  from {
+    transform: translate(-200rem, -200rem) rotate(360deg);
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes textEnterance2 {
+  from {
+    transform: translate(200rem, 200rem) rotate(360deg) scale(6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes textEnterance3 {
+  from {
+    transform: translate(-200rem, 200rem) rotate(-360deg) scale(6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes textEnterance4 {
+  from {
+    transform: translate(200rem, -200rem) rotate(-360deg) scale(6);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes textEnterance5 {
+  from {
+    transform: translateY(-200rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes textEnterance6 {
+  from {
+    transform: translateY(200rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes vanish {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: scale(0);
+    margin: 0;
+  }
+}
+
+
+@keyframes activeRight {
+  from {
+    transform: scale(1);
+    opacity: 0.6;
+    right: 5rem;
+  }
+  to {
+    right: 50%;
+    opacity: 1;
+    transform: scale(1.2) translate(50%, -2rem);
+  }
+}
+
+
+@keyframes scrollable {
+  to {
+    overflow-y: scroll;
+  }
+}
+
+
+@keyframes halfRound {
+  to {
+    transform: rotate(0.5turn);
+  }
+}
+@keyframes round {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+
+@keyframes roundreverse {
+  to {
+    transform: rotate(-1turn);
+  }
+}
+

@@ -1,0 +1,45 @@
+$t: 6%;
+$l: 3%;
+$screenHeight: var(--screenHeight);
+$thickness: 10px;
+$transitionTime: 2s;
+
+.laptop {
+  --screenHeight: 40rem;
+
+  &.open {
+    & .laptop__screen {
+      transform: none;
+    }
+
+    & .laptop-container {
+      transform: rotateX(0deg) rotateY(0deg);
+    }
+  }
+
+  width: fit-content;
+  perspective: 80cm;
+
+  &-container {
+    transform-style: preserve-3d;
+    transition: $transitionTime;
+    height: $screenHeight;
+    width: calc($screenHeight * 1.5);
+    transform-origin: right bottom;
+    transform: rotateX(-90deg) rotateY(-90deg);
+  }
+
+  &__content {
+    top: $t;
+    left: $l;
+    background-color: $color-theme-grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100% - (2 * $t);
+    width: 100% - (2 * $l);
+
+    color: $color-theme-inv;
+    font-size: $font-size-default;
+  }
+}

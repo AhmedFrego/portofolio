@@ -1,0 +1,78 @@
+$thickness: 10px;
+$t: 6%;
+$l: 3%;
+
+.laptop__screen {
+  height: 100%;
+  transform-origin: bottom;
+  transform-style: preserve-3d;
+  transform: rotateX(-90deg);
+
+
+  & > * {
+    position: absolute;
+  }
+  &__face {
+    width: 100%;
+    &--front {
+      height: 100%;
+      clip-path: polygon(0 0, 100% 0, 100% $t, $l $t, $l 100% -$t, 100%-$l 100% -$t, 100%-$l $t, 100% $t, 100% 100%, 0% 100%);
+      background: linear-gradient(-30.5deg, $color-theme-grey 35%, $color-theme-inv-grey 65%);
+      box-shadow: 0 0 5rem $color-shadow-light-4 inset;
+    }
+
+    &--back {
+      background: linear-gradient(-30.5deg, $color-theme-grey 35%, $color-theme-inv-grey);
+
+      height: 102.5%;
+      transform: translateZ(-$thickness);
+
+      &::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+
+        background: url("../../../../imgs//32694984.png"), radial-gradient($color-shadow-light-2 60%, transparent 65%);
+        background-size: 10% 10%, 15% 15%;
+        background-repeat: no-repeat;
+        background-position: 90% 90%, 92.5% 92.5%;
+        transform: rotateY(180deg);
+      }
+    }
+  }
+
+  &__side {
+    &--right,
+    &--left {
+      height: 102.5%;
+      background: linear-gradient($color-theme-inv-grey, $color-theme-grey 80%);
+      width: $thickness + 1px;
+    }
+
+    &--right,
+    &--top {
+      right: 0;
+    }
+
+    &--left {
+      transform-origin: left;
+      transform: rotateY(90deg);
+    }
+
+    &--right {
+      transform: rotateY(-90deg);
+      transform-origin: right;
+    }
+
+    &--top {
+      background: $color-theme-inv-grey;
+      width: 100%;
+      height: $thickness;
+      transform-origin: top center;
+      transform: rotateX(-90deg);
+    }
+  }
+
+  
+}

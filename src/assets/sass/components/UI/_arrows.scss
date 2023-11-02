@@ -1,0 +1,27 @@
+.arrows {
+  height: 5rem;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 8rem;
+  & > * {
+    cursor: pointer;
+    transition: all 1ms ,transform .2s ;
+    color: $color-secondary;
+
+    &:disabled {
+      cursor: no-drop;
+      transition: all 0s !important;
+      color: gray;
+    }
+  }
+  &--right:hover {
+    transform: scale(1.2) translateX(0.3rem);
+  }
+  &--left:hover {
+    transform: scale(1.2) translateX(-0.3rem);
+  }
+}

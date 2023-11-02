@@ -1,0 +1,25 @@
+.footer {
+  // height: 100rem;
+
+
+    background: radial-gradient(transparent 90%,rgba($color-secondary-rgb, 0.9)), $color-main;
+    background-size: 10vw 10vw ;
+    background-repeat: repeat no-repeat;
+    background-position: 5% 0;
+  // background-color: rgba($color-secondary-rgb, 0.5);
+  margin-top: -1.5rem;
+  padding: 1.5rem 1.5rem;
+  padding-top: 2.5rem;
+
+  &__logo {
+    max-height: 10rem;
+
+    svg {
+      height: 8rem;
+    }
+  }
+  svg {
+    height: 8rem;
+    color: rebeccapurple;
+  }
+}
